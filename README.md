@@ -67,7 +67,7 @@ Follow these steps to set up and run the application locally.
 ---
 
 ## Note
-If you need to get SHA for backend execute the following command, make sure the backend container is running before doing this tho
+- If you need to get SHA for backend execute the following command, make sure the backend container is running before doing this tho
 
 ```bash
 # This for backend 
