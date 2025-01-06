@@ -76,16 +76,6 @@ docker container ls | grep backend | awk '{print $1}'
 
 ---
 
-## Application Screenshots
-
-### Desktop View
-![Desktop View](desktop.png)
-
-### Mobile View
-![Mobile View](/mobile.png)
-
----
-
 ## Project Structure and Technologies Used:
 ### Monorepo Setup:
 - Backend: Laravel
@@ -111,3 +101,12 @@ Server-rendered page with two client components:
 ## Summary:
 > The project utilizes a monorepo structure to house the Laravel backend, Next.js frontend, and Dockerized database. The backend features a simple database design with a Task and Task Status table. It follows a clear separation of concerns using controllers, services, and models. On the frontend, a server-rendered Next.js application with client components for different states ensures a smooth user experience. Tailwind CSS was employed for responsive design. 
 
+---
+
+## Application Screenshots
+
+### Desktop View
+![Desktop View](desktop.png)
+
+### Mobile View
+![Mobile View](/mobile.png)
