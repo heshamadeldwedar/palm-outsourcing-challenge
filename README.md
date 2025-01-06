@@ -55,6 +55,8 @@ Follow these steps to set up and run the application locally.
    docker container exec <frontend_SHA> npm install
    ```
 
+7. Go to `localhost:3000` 
+
 ---
 
 If you need to get SHA for backend or frontend execute the following command, make sure your containers are running before doing this tho
