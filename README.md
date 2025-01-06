@@ -1,7 +1,3 @@
-To create a README file that guides users through installing an application using Git, Docker, and running necessary commands, you can structure it like this:
-
----
-
 # Application Installation Guide
 
 Follow these steps to set up and run the application locally.
@@ -15,7 +11,7 @@ Follow these steps to set up and run the application locally.
 1. **Clone the Repository**
    
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/heshamadeldwedar/palm-outsourcing-challenge
    cd <repository_directory>
    ```
 
@@ -32,7 +28,7 @@ Follow these steps to set up and run the application locally.
    Run the following command to install PHP dependencies using Composer:
    
    ```bash
-   docker container exec <container_sha> composer install
+   docker container exec <backend_SHA> composer install
    ```
 
 4. **Run Database Migrations**
@@ -40,7 +36,7 @@ Follow these steps to set up and run the application locally.
    Execute the following command to run database migrations:
    
    ```bash
-   docker container exec <container_sha> php artisan migrate
+   docker container exec <backend_SHA> php artisan migrate
    ```
 
 5. **Run Database Seeder**
@@ -48,7 +44,7 @@ Follow these steps to set up and run the application locally.
    Seed the database with initial data:
    
    ```bash
-   docker container exec <container_sha> php artisan db:seed --class=TaskSeed
+   docker container exec <backend_SHA> php artisan db:seed --class=TaskSeed
    ```
 
 6. **Install Frontend Dependencies**
@@ -56,11 +52,17 @@ Follow these steps to set up and run the application locally.
    Install frontend dependencies using npm:
    
    ```bash
-   docker container exec <container_hash> npm install
+   docker container exec <frontend_SHA> npm install
    ```
 
 ---
 
-Make sure to replace placeholders like `<repository_url>`, `<repository_directory>`, `<container_sha>`, and `<container_hash>` with actual values relevant to your application.
+If you need to get SHA for backend or frontend execute the following command, make sure your containers are running before doing this tho
 
-Feel free to add any additional steps or details specific to your application setup process.
+```bash
+# This for backend 
+docker container ls | grep backend | awk '{print $1}' 
+
+#This for frontend
+docker container ls | grep backend | awk '{print $1}'  
+```
