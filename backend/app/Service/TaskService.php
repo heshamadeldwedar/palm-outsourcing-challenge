@@ -8,6 +8,6 @@ class TaskService {
 
 
     public function index () {
-        return Task::get();
+        return Task::with('status')->get();
     }
 }

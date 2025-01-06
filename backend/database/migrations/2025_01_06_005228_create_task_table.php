@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('task_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('color_hex')->default('#FFFFFF');
+            $table->enum('color', ['info', 'gray', 'failure', 'success', 'warning', 'indigo', 'dark'])->default('info');
             $table->timestamps();
 
         });
