@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Service;
 
-class TaskController extends Controller
-{
-    function index() {
+class TaskService {
+    public function index () {
         return [
             [
                 'id' => 1,
