@@ -11,11 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task', function (Blueprint $table) {
+
+        Schema::create('task_statuses', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('color_hex')->default('#FFFFFF');
+            $table->timestamps();
+
+        });
+
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->enum('status', ['in-progress', 'backlog', 'live-approved']);
+            $table->unsignedBigInteger('status_id');
+            $table->foreign('status_id')->references('id')->on('task_statuses');
             $table->timestamps();
         });
     }
@@ -25,6 +35,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task');
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->dropForeign(['status_id']);
+        });
+        Schema::dropIfExists('task_statuses');
+        Schema::dropIfExists('tasks');
     }
 };
